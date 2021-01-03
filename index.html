@@ -52,10 +52,10 @@
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li class=""><a class="active" href="index.html">Home</a></li>
-						<li id="mAbout"><a href="#about-area">About</a></li>
-						<li id="mWork"><a href="#work-area">Projects</a></li>
-						<li id="mService"><a href="#service-area">Service</a></li>
+						<li><a id="mHome" class="active" href="#">Home</a></li>
+						<li><a id="mAbout" href="#about-area">About</a></li>
+						<li><a id="mWork" href="#work-area">Projects</a></li>
+						<li><a id="mService" href="#service-area">Service</a></li>
 						<li><a href="https://mahadis.wordpress.com/" target="_blank">Blog</a>
 						<li><a href="https://drive.google.com/file/d/12lWfJe9H4VYAeLW-Zwz0rq5gJTztQqEE/view?usp=sharing" target="_blank">Resume</a></li>
 						<!-- <li class="menu-has-children"><a href="#">Pages</a>
@@ -81,7 +81,7 @@
 
 
 	<!-- start banner Area -->
-	<section class="home-banner-area"> <!-- style="background: url('img/banner-bg-o.jpg')" -->
+	<section class="home-banner-area" id="home"> <!-- style="background: url('img/banner-bg-o.jpg')" -->
 		<div class="container">
 			<div class="row fullscreen d-flex align-items-center">
 				<div class="banner-content col-lg-6 col-md-12 justify-content-center ">
@@ -592,7 +592,6 @@
 	</section>
 	<!-- End Contact Area -->
 
-
 	<!-- start footer Area -->
 	<footer class="footer-area">
 		<div class="container">
@@ -620,6 +619,10 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
 <!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+			<div class="row footer-bottom justify-content-center">
+			 	<a href='https://www.stat-counter.org/'>www.Stat-Counter.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ce400214926b5dacb3f762b8966139ae850bcc64'></script>
+				<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/779850/t/5"></script>
 			</div>
 		</div>
 	</footer>
@@ -652,22 +655,45 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/wow.min.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
+
+		$("#mHome").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#home").offset().top
+		    }, 2000);
+		    document.getElementById("mHome").className = "active";
+		    document.getElementById("mAbout").className = "";
+		    document.getElementById("mWork").className = "";
+		    document.getElementById("mService").className = "";
+		});
+
 		$("#mAbout").click(function() {
 		    $('html, body').animate({
 		        scrollTop: $("#about").offset().top
 		    }, 2000);
+		    document.getElementById("mAbout").className = "active";
+		    document.getElementById("mHome").className = "";
+		    document.getElementById("mWork").className = "";
+		    document.getElementById("mService").className = "";
 		});
 
 		$("#mWork").click(function() {
 		    $('html, body').animate({
 		        scrollTop: $("#work").offset().top
 		    }, 2000);
+		    document.getElementById("mWork").className = "active";
+		    document.getElementById("mAbout").className = "";
+		    document.getElementById("mHome").className = "";
+		    document.getElementById("mService").className = "";
 		});
 
 		$("#mService").click(function() {
 		    $('html, body').animate({
 		        scrollTop: $("#service").offset().top
 		    }, 2000);
+		    document.getElementById("mService").className = "active";
+		    document.getElementById("mWork").className = "";
+		    document.getElementById("mAbout").className = "";
+		    document.getElementById("mHome").className = "";
 		});
 	</script>
 </body>
