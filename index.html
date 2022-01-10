@@ -671,7 +671,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	<!-- ####################### Start Scroll to Top Area ####################### -->
 	<div id="back-top">
-		<a title="Go to Top" href="#">
+		<a id="goTop" title="Go to Top" href="#">
 			<i class="lnr lnr-arrow-up"></i>
 		</a>
 	</div>
@@ -696,6 +696,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/wow.min.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
+
+		$("#goTop").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#home").offset().top
+		    }, 2000);
+		    document.getElementById("mHome").className = "active";
+		    document.getElementById("mAbout").className = "";
+		    document.getElementById("mWork").className = "";
+		    document.getElementById("mService").className = "";
+		});
 
 		$("#mHome").click(function() {
 		    $('html, body').animate({
